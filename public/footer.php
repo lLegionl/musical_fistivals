@@ -44,7 +44,7 @@
         .footer {
     background-color: #333333;
     color: #ffffff;
-    padding: 50px 0;
+    padding-top: 50px;
     }
 
     .footer-logo {

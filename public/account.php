@@ -50,7 +50,7 @@ include "header.php";
     }
 
     .input_style {
-    width: calc(30% - 30px); /* Adjust width to account for padding */
+    width: calc(45% - 30px); /* Adjust width to account for padding */
     padding: 10px 15px;
     box-sizing: border-box;
     border: 1px solid #555;
