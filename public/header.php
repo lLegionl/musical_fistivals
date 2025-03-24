@@ -85,7 +85,6 @@
                 <ul>
                 <li><a href="index.php">Главная</a></li>
                 <li><a href="#">Билеты</a></li>
-                <li><a href="#">Программа</a></li>
                 <li><a href="#">Контакты</a></li>
                 <?php if (!empty($_SESSION['auth']) && !empty($_SESSION['login'])) 
                 {echo '<li><a href="account.php">Личный кабинет</a></li>';} else 
