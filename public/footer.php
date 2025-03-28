@@ -25,18 +25,21 @@
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
+
     }
 
     .col-md-6 {
     width: 50%;
     padding-left: 15px;
     padding-right: 15px;
+
     }
 
     .col-md-4 {
     width: 33.33%;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+
     }
 
         /* Футер */
@@ -78,6 +81,8 @@
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 20px;
+
+    box-sizing: border-box;
     }
 
     .footer-links {

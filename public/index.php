@@ -108,7 +108,7 @@ include "header.php";
           <p class="hero-text">
             Присоединяйтесь к нам на ежегодные фестивали - незабываемом событии, которое объединит любителей музыки со всего мира!
           </p>
-          <a href="#" class="btn_action">Купить билеты</a>
+          <a href="concert.php" class="btn_action">Купить билеты</a>
         </div>
       </div>
     </div>

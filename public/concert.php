@@ -2,6 +2,12 @@
 session_start();
 include "db.php";
 include "header.php";
+
+if (!empty($_SESSION['auth']) && !empty($_SESSION['login'])) 
+{}
+else 
+{echo header('location:authentication.php?status=need_auth');}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -135,6 +141,7 @@ include "header.php";
         margin: 0;
         display: flex;
         justify-content: center;
+        padding: 10px 0 ;
 
         font-size: 24px;
     }

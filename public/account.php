@@ -20,7 +20,7 @@ include "header.php";
         text-decoration: none;
         color: #ffffff;
     }
-    .account_auth {
+    .account {
     background-color: #222; /* Dark background */
     padding: 20px;
     border-radius: 10px;
@@ -85,26 +85,39 @@ include "header.php";
     .submit_button:hover {
     background-color: #777; /* Slightly lighter on hover */
     }
+
+    .account_nav {
+        display: flex;
+        justify-content: space-evenly;
+        gap: 10px;
+
+    }
 </style>
 <body>
-    <div class="account_auth">
+    <div class="account">
         <div class="container">
-            <div class="authentication">
-                <form action="edit_user.php?id=<?=$_SESSION['id_user']?>" method="post">
+            <div class="account_nav">
+                <a href="account.php?account=edit" class="submit_button">Профиль</a>
+                <a href="account.php?account=ticket" class="submit_button">Билеты</a>
+            </div>
+            <?php if (empty($_GET['account']) || $_GET['account'] == 'edit') { echo
+            '<div class="authentication">
+                <form action="edit_user.php?id='.$_SESSION['id_user'].'" method="post">
                     <h2>Личный кабинет</h2>
                 <ul>
-                    <li><input type="text" class="input_style" name="login" placeholder="Логин" value="<?=$_SESSION['user']['login']?>"></li>
-                    <li><input type="text" class="input_style" name="name" placeholder="Имя" value="<?=$_SESSION['user']['name']?>"></li>
-                    <li><input type="text" class="input_style" name="surname" placeholder="Фамилия" value="<?=$_SESSION['user']['surname']?>"></li>
-                    <li><input type="text" class="input_style" name="email" placeholder="Почта" value="<?=$_SESSION['user']['email']?>"></li>
-                    <li><input type="text" class="input_style" name="phone" placeholder="Номер телефона" value="<?=$_SESSION['user']['phone']?>"></li>
-                    <li><input type="text" class="input_style" name="password" placeholder="Пароль" value="<?=$_SESSION['user']['password']?>"></li>
+                    <li><input type="text" class="input_style" name="login" placeholder="Логин" value="'.$_SESSION['user']['login'].'"></li>
+                    <li><input type="text" class="input_style" name="name" placeholder="Имя" value="'.$_SESSION['user']['name'].'"></li>
+                    <li><input type="text" class="input_style" name="surname" placeholder="Фамилия" value="'.$_SESSION['user']['surname'].'"></li>
+                    <li><input type="text" class="input_style" name="email" placeholder="Почта" value="'.$_SESSION['user']['email'].'"></li>
+                    <li><input type="text" class="input_style" name="phone" placeholder="Номер телефона" value="'.$_SESSION['user']['phone'].'"></li>
+                    <li><input type="text" class="input_style" name="password" placeholder="Пароль" value="'.$_SESSION['user']['password'].'"></li>
                     <li class="button"><input type="submit" class="submit_button" value="применить">
                     <button class="submit_button"><a href="logout.php">выйти</a></button>
                     </li>
                 </ul>
                 </form>
-            </div>
+            </div>';
+            }?>
         </div>
     </div>
 </body>
