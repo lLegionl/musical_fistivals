@@ -19,8 +19,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-left: -15px;
-    margin-right: -15px;
+    background-color: #222222;
     }
     .col-md-12 {
     width: 100%;
@@ -48,6 +47,7 @@
     }
 
     .footer-logo {
+        margin-top: 10px;
     max-width: 75px;
     border-radius: 90px;
     }
@@ -120,6 +120,7 @@
     .copyright {
     background-color: #222222;
     padding: 10px 0;
+    width: 100%;
     text-align: center;
     }
 
@@ -148,15 +149,15 @@
             <h4 class="footer-heading">Информация</h4>
             <ul class="footer-links">
                 <li><a href="#">О фестивале</a></li>
-                <li><a href="#">Билеты</a></li>
+                <li><a href="#">Концерты</a></li>
                 <li><a href="#">Программа</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="index.php#contact">Контакты</a></li>
             </ul>
             </div>
         </div>
-        </div>
         <div class="copyright">
-        <p>© 2025 [Название фестиваля]. Все права защищены.</p>
+        <p>© 2025 Фестиваль афиша. Все права защищены.</p>
+        </div>
         </div>
     </footer>
 </body>

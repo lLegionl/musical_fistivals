@@ -8,7 +8,7 @@ include "header.php";
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Main</title>
+    <title>Concert</title>
 </head>
 <style>
         body {
@@ -100,35 +100,20 @@ include "header.php";
     }
 </style>
 <body>
-  <section class="hero">
+
+<section class="hero">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="hero-heading">Фестиваль афиша</h1>
+          <h1 class="hero-heading">Список концертов</h1>
           <p class="hero-text">
-            Присоединяйтесь к нам на ежегодные фестивали - незабываемом событии, которое объединит любителей музыки со всего мира!
+          Музыкальные фестивали — это не просто концерты, это целые вселенные эмоций, открытий и незабываемых впечатлений. Здесь встречаются меломаны, артисты и мечты. Наш сайт — ваш гид по самым громким, атмосферным и уникальным фестивалям мира.
           </p>
-          <a href="#" class="btn_action">Купить билеты</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <img src="./images/scene.png" alt="Фото фестиваля" class="about-img">
-        </div>
-        <div class="col-md-6">
-          <h2 class="about-heading">Фестиваль в Чили</h2>
-          <p class="about-text">
-            Masters of Rock Chile - это музыкальный фестиваль, который пройдет в 2025 году. В программе выступят легендарные группы, такие как Judas Priest, Scorpions, Europe, Opeth и Queensrÿche. Это событие обещает стать настоящим праздником для поклонников рок-музыки.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <?php include "footer.php"; ?>
 </body>

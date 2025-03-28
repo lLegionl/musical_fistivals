@@ -84,11 +84,11 @@
             <nav class="header-nav">
                 <ul>
                 <li><a href="index.php">Главная</a></li>
-                <li><a href="#">Билеты</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="concert.php">Концерты</a></li>
+                <li><a href="index.php#contact">Контакты</a></li>
                 <?php if (!empty($_SESSION['auth']) && !empty($_SESSION['login'])) 
                 {echo '<li><a href="account.php">Личный кабинет</a></li>';} else 
-                {echo '<li><a href="authentication.php">войти</a></li>';}?>                </ul>
+                {echo '<li><a href="authentication.php">войти</a></li>';}?></ul>
             </nav>
             </div>
         </div>
