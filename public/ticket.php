@@ -117,6 +117,7 @@ $concert = $_GET['concert'];
     text-align: center; /* Center the form */
     }
 
+
     .form ul {
     list-style: none; /* Remove bullet points */
     padding: 0;
@@ -172,6 +173,8 @@ $concert = $_GET['concert'];
 
     
 
+    
+
 </style>
 <body>
 
@@ -196,7 +199,7 @@ $concert = $_GET['concert'];
                     $stm = $pdo->query("SELECT * FROM concert WHERE id=$concert");
                     $concert = $stm->fetch();
             ?>
-        <h2>Билет на концерт <?=$concert['concert_name']?></h2>
+                <h2>Билет на концерт <?=$concert['concert_name']?></h2>
                 <ul>
                     <li><label for="">дата</label><input type="text" class="input_style" value="<?=$concert['concert_date']?>" readonly></li>
                     <li><label for="">адрес</label><input type="text" class="input_style" value="<?=$concert['concert_place']?>" readonly></li>

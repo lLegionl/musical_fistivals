@@ -138,12 +138,16 @@ else
     }
 
     .block h3 {
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        padding: 10px 0 ;
-
         font-size: 24px;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 24px;
+        font-weight: 600;
+        border-bottom: 2px solid #fff;
+        padding-bottom: 10px;
+
+
     }
     .block p {
         gap: 15px;
@@ -176,6 +180,8 @@ else
 
         margin: auto;
     }
+
+
 </style>
 <body>
 

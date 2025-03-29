@@ -92,6 +92,123 @@ include "header.php";
         gap: 10px;
 
     }
+
+    /* карточки билетов */
+
+
+.tickets-title {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+.cart_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.ticket-card {
+    background: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    
+    width: 500px;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+}
+
+.ticket-header {
+    background: #3498db;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.concert-name {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.ticket-count {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.ticket-details {
+    padding: 20px;
+}
+
+.detail-item {
+    display: flex;
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: #fff;
+    min-width: 80px;
+}
+
+.detail-value {
+    color: #fff;
+}
+
+.status {
+    color: #27ae60;
+    font-weight: 600;
+}
+.ticket-actions {
+    display: flex;
+    padding: 0 20px 20px;
+    gap: 10px;
+}
+
+.action-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: cen;
+}
+
+.cancel-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #c0392b;
+}
+
+.empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.empty h2 {
+    display: inline-block;
+}
+.empty a {
+    color: #3498db;
+}
 </style>
 <body>
     <div class="account">
@@ -117,8 +234,73 @@ include "header.php";
                 </ul>
                 </form>
             </div>';
-            }?>
-        </div>
+            } else {
+                $user_id = $_SESSION['id_user'];
+                $stm = $pdo->query("
+                SELECT 
+                t.id,
+                t.ticket_count,
+                t.ticket_status,
+                c.id AS concert_id,
+                c.concert_name,
+                c.concert_date,
+                c.concert_place,
+                c.concert_seats
+            FROM 
+                tickets t
+            JOIN 
+                concert c ON t.concert_id = c.id
+            WHERE 
+                t.user_id = $user_id"
+                );
+
+                $tickets = $stm->fetchAll();
+                echo '<div class="cart_wrapper">';
+            if (empty($tickets)) 
+            {   
+                echo '<div class="empty"><h2>У вас нету билетов</h2><a href="concert.php">Забронировать ?</a></div>';
+            }
+                foreach ($tickets as $ticket)
+                {
+                    switch ($ticket['ticket_status']) {
+                        case 'ожидает подтверждение': 
+                            $confirm = '#f39c12';
+                            break;
+                        case 'подтвержден':
+                            $confirm = '#27ae60';
+                            break;
+                    }
+                echo   
+                '
+                <div class="ticket-card">
+                <div class="ticket-header">
+                    <span class="concert-name">'.$ticket['concert_name'].'</span>
+                    <span class="ticket-count">'.$ticket['ticket_count'].' билета</span>
+                </div>
+                
+                <div class="ticket-details">
+                    <div class="detail-item">
+                        <span class="detail-label">Дата:</span>
+                        <span class="detail-value">'.$ticket['concert_date'].'</span>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <span class="detail-label">Место:</span>
+                        <span class="detail-value">'.$ticket['concert_place'].'</span>
+                    </div>
+                    
+                    <div class="detail-item">
+                        <span class="detail-label">Статус:</span>
+                        <span class="detail-value status" style="color:'.$confirm.'">'.$ticket['ticket_status'].'</span>
+                    </div>
+                </div>
+                
+                <div class="ticket-actions">
+                    <a class="action-btn cancel-btn" href="cancel.php?ticket_id='.$ticket['id'].'">Отменить бронь</a>
+                </div>
+            </div>'
+            ;}echo '</div>';}?>
+        </div>   
     </div>
 </body>
 </html>
