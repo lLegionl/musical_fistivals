@@ -3,166 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Фестиваль афиша</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <style>
+    :root {
+        --primary-color: #ff0000;
+        --secondary-color: #333333;
+        --dark-bg: #121212;
+        --light-text: #ffffff;
+        --dark-text: #333333;
+        --footer-bg: #1a1a1a;
+    }
+
     body {
-    font-family: sans-serif;
-    color: #ffffff;
-    background-color: #333333;
+        font-family: 'Montserrat', sans-serif;
+        color: var(--light-text);
+        margin: 0;
+        padding: 0;
     }
+
     .container {
-    max-width: 1200px;
-    margin: 0 auto;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
     }
+
+    /* Футер */
+    .footer {
+        background-color: var(--footer-bg);
+        padding: 60px 0 0;
+        position: relative;
+    }
+
+    .footer::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    }
+
     .wrapper_footer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    background-color: #222222;
-    }
-    .col-md-12 {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    }
-
-    .col-md-6 {
-    width: 50%;
-    padding-left: 15px;
-    padding-right: 15px;
-
-    }
-
-    .col-md-4 {
-    width: 33.33%;
-    padding-left: 30px;
-    padding-right: 30px;
-
-    }
-
-        /* Футер */
-        .footer {
-    background-color: #333333;
-    color: #ffffff;
-    padding-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        padding-bottom: 40px;
     }
 
     .footer-logo {
-        margin-top: 10px;
-    max-width: 75px;
-    border-radius: 90px;
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 2px solid var(--primary-color);
+        margin-bottom: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-logo:hover {
+        transform: rotate(15deg);
     }
 
     .footer-text {
-    margin-top: 20px;
-    line-height: 1.6;
-    }
-
-    .social-links {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
-    }
-
-    .social-links li {
-    display: inline-block;
-    margin-right: 10px;
-    }
-
-    .social-links a {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 18px;
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        opacity: 0.8;
     }
 
     .footer-heading {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 25px;
+        position: relative;
+        display: inline-block;
+    }
 
-    box-sizing: border-box;
+    .footer-heading::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 50px;
+        height: 3px;
+        background-color: var(--primary-color);
     }
 
     .footer-links {
-    list-style: none;
-    padding: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
     }
 
     .footer-links li {
-    margin-bottom: 10px;
+        margin-bottom: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    .footer-links li:hover {
+        transform: translateX(5px);
     }
 
     .footer-links a {
-    color: #ffffff;
-    text-decoration: none;
+        color: var(--light-text);
+        text-decoration: none;
+        font-family: 'Open Sans', sans-serif;
+        opacity: 0.8;
+        transition: all 0.3s ease;
+        display: block;
     }
 
-    .footer-form {
-    margin-top: 20px;
+    .footer-links a:hover {
+        color: var(--primary-color);
+        opacity: 1;
     }
 
-    .footer-form input {
-    width: 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f0f0f0;
-    color: #333333;
-    margin-bottom: 10px;
+    .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 25px;
     }
 
-    .footer-form button {
-    background-color: #ff0000;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: var(--light-text);
+        border-radius: 50%;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+        background-color: var(--primary-color);
+        transform: translateY(-3px);
     }
 
     .copyright {
-    background-color: #222222;
-    padding: 10px 0;
-    width: 100%;
-    text-align: center;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        text-align: center;
+        font-size: 0.9rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .copyright p {
-    margin: 0;
-    font-size: 14px;
+        margin: 0;
+        opacity: 0.7;
+        font-family: 'Open Sans', sans-serif;
     }
 
+    /* Адаптивность */
+    @media (max-width: 768px) {
+        .wrapper_footer {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+        
+        .footer {
+            padding: 50px 0 0;
+        }
+        
+        .footer-heading {
+            font-size: 1.3rem;
+        }
+    }
 </style>
 <body>
     <footer class="footer">
         <div class="container">
-        <div class="wrapper_footer">
-            <div class="col-md-4">
-            <img src="./images/logo.png" alt="Логотип фестиваля" class="footer-logo">
-            <p class="footer-text">
-                Мы - команда энтузиастов, которые любят музыку и хотят делиться этой любовью с вами!
-            </p>
-            <ul class="social-links">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            </ul>
+            <div class="wrapper_footer">
+                <div class="col-md-4">
+                    <img src="./images/logo.png" alt="Логотип фестиваля" class="footer-logo">
+                    <p class="footer-text">
+                        Мы - команда энтузиастов, которые любят музыку и хотят делиться этой любовью с вами!
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="footer-heading">Быстрые ссылки</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.php">Главная</a></li>
+                        <li><a href="concert.php">Концерты</a></li>
+                        <li><a href="index.php#contact">Контакты</a></li>
+                        <li><a href="authentication.php">Вход/Регистрация</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4 class="footer-heading">Информация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">О фестивале</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Политика конфиденциальности</a></li>
+                        <li><a href="#">Условия использования</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-md-4">
-            <h4 class="footer-heading">Информация</h4>
-            <ul class="footer-links">
-                <li><a href="#">О фестивале</a></li>
-                <li><a href="#">Концерты</a></li>
-                <li><a href="#">Программа</a></li>
-                <li><a href="index.php#contact">Контакты</a></li>
-            </ul>
+            <div class="copyright">
+                <p>© 2025 Фестиваль афиша. Все права защищены.</p>
             </div>
-        </div>
-        <div class="copyright">
-        <p>© 2025 Фестиваль афиша. Все права защищены.</p>
-        </div>
         </div>
     </footer>
 </body>
