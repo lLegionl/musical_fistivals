@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
-            --primary-color: #ff0000;
+            --primary-color: #e74c3c;
             --secondary-color: #333333;
             --dark-bg: #121212;
             --light-text: #ffffff;
@@ -99,6 +99,8 @@
             letter-spacing: 0.5px;
             padding: 8px 0;
             transition: color 0.3s ease;
+
+            box-sizing: border-box;
         }
 
         .header-nav a:hover {

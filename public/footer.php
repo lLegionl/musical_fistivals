@@ -9,7 +9,7 @@
 </head>
 <style>
     :root {
-        --primary-color: #ff0000;
+        --primary-color: #e74c3c;
         --secondary-color: #333333;
         --dark-bg: #121212;
         --light-text: #ffffff;
@@ -121,31 +121,6 @@
         color: var(--primary-color);
         opacity: 1;
     }
-
-    .social-links {
-        display: flex;
-        gap: 15px;
-        margin-top: 25px;
-    }
-
-    .social-links a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background-color: rgba(255, 255, 255, 0.1);
-        color: var(--light-text);
-        border-radius: 50%;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-
-    .social-links a:hover {
-        background-color: var(--primary-color);
-        transform: translateY(-3px);
-    }
-
     .copyright {
         background-color: rgba(0, 0, 0, 0.2);
         padding: 20px 0;
@@ -185,12 +160,6 @@
                     <p class="footer-text">
                         Мы - команда энтузиастов, которые любят музыку и хотят делиться этой любовью с вами!
                     </p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
                 </div>
                 <div class="col-md-4">
                     <h4 class="footer-heading">Быстрые ссылки</h4>

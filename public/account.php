@@ -255,6 +255,8 @@ include "header.php";
             transition: all 0.3s ease;
             text-align: center;
             text-decoration: none;
+
+            box-sizing: border-box;
         }
 
         .action-btn:hover {

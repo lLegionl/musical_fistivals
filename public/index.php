@@ -14,7 +14,7 @@ include "header.php";
 </head>
 <style>
     :root {
-        --primary-color: #ff0000;
+        --primary-color: #e74c3c;
         --secondary-color: #333333;
         --dark-bg: #121212;
         --light-text: #ffffff;
@@ -230,7 +230,6 @@ include "header.php";
         height: 150px;
         border-radius: 50%;
         object-fit: cover;
-        border: 3px solid var(--primary-color);
         margin-bottom: 15px;
     }
 
@@ -289,28 +288,6 @@ include "header.php";
         font-family: 'Open Sans', sans-serif;
     }
 
-    /* Анимации */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-
-    @keyframes fadeInDown {
-        from {
-            opacity: 0;
-            transform: translateY(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
 
     /* Адаптивность */
     @media (max-width: 768px) {

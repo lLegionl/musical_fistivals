@@ -114,7 +114,7 @@ include "header.php";
     }
 
     .block {
-        background-color: rgba(40, 40, 40, 0.8);
+        background-color: rgb(50, 50, 50);
         border-radius: 10px;
         overflow: hidden;
         transition: all 0.3s ease;
@@ -150,13 +150,17 @@ include "header.php";
         transform: translateX(-50%);
         width: 50px;
         height: 2px;
-        background-color: var(--accent-color);
+        background-color: var(--primary-color);
     }
 
     .block p {
         margin: 15px 0;
         font-family: 'Open Sans', sans-serif;
         line-height: 1.6;
+        color: #aaaf;
+    }
+    .block i {
+        color: var(--primary-color);
     }
 
     .concert_image {
@@ -188,11 +192,6 @@ include "header.php";
         box-shadow: 0 5px 15px rgba(207, 141, 42, 0.4);
     }
 
-    /* Анимации */
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
 
     /* Адаптивность */
     @media (max-width: 768px) {
