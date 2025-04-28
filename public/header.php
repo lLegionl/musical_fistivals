@@ -67,6 +67,7 @@
             border-radius: 50%;
             border: 2px solid var(--primary-color);
             transition: transform 0.3s ease;
+            filter: brightness(190%);     
         }
 
         .header-logo:hover {
@@ -158,9 +159,8 @@
     <header class="header">
         <div class="container">
             <div class="wrapper_header">
-                <div class="col-md-4">
                     <img src="./images/logo.png" alt="Логотип фестиваля" class="header-logo">
-                </div>
+                <h1>DarkRage Fest</h1>
                 <div class="col-md-8">
                     <nav class="header-nav">
                         <ul>

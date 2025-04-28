@@ -366,15 +366,15 @@ include "header.php";
             </div>
             
             <div class="team-member">
-              <img src="./images/photo_2024-12-30_14-12-03.jpg" alt="Мария Иванова" class="team-img">
-              <h3 class="team-name">Мария Головач</h3>
+              <img src="./images/ava1_site.jpg" alt="Тилль Линдеманн" class="team-img">
+              <h3 class="team-name">Тилль Линдеманн</h3>
               <p class="team-position">Директор по маркетингу</p>
               <p>Специалист по продвижению мероприятий</p>
             </div>
             
             <div class="team-member">
-              <img src="./images/photo_2025-03-30_20-03-00.jpg" alt="Дмитрий Смирнов" class="team-img">
-              <h3 class="team-name">Евгений Сироткин</h3>
+              <img src="./images/AVA_site.jpg" alt="Питер Стилл" class="team-img">
+              <h3 class="team-name">Питер Стилл</h3>
               <p class="team-position">Музыкальный директор</p>
               <p>Куратор музыкальной программы</p>
             </div>
