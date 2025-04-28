@@ -16,7 +16,7 @@ if (!empty($_POST['login']) && !empty($_POST['name']) && !empty($_POST['surname'
         $_POST['password']
     ]);
     if ($user) {
-        header('Location:login.php');
+        header('Location:authentication.php?message=sucses');
     } else {
         header('Location:authentication.php?message=error');
     }
